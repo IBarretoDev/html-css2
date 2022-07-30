@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+    <!--caption é a legenda da minha tabela (não pode ter tr, nem th e nem td)
+        thead (th) é a cabeça da minha tabela (pode ser composto por tr e th)
+        tbody é o corpo da tabela (pode ser composto por tr e td)
+        tfoot é o pé da minha tabela (pode ser composto por tr e td)
+        O scope serve para ajudar no mecanismo de busca do google
+        Scope col para quando os dados estiverem em coluna (abaixo)
+        Scope row para quando os dados estiverem em linha (ao lado)-->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        table {
+            width: 500px;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        thead, tfoot {
+            background-color: azure;
+        }
+        td.numero {
+            text-align: right;
+        }
+        caption {
+            font-size: 1.5em;
+            font-weight: bolder;
+            background-color: aquamarine;
+            padding: 10px;
+        }
+        tbody > tr:nth-child(2n) { /*Basta seguir esse modelo para fazer efeito zebrado na tabela*/
+            background-color: lightslategray;
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>Uso de tabelas grandes</h1>
+    <table>
+        <caption>População de Habitantes</caption>
+        <thead>
+            <tr>
+                <th scope="col">Estado</th>
+                <th scope="col">População</th>
+            </tr>
+        </thead>
+        <tbody>
+              <tr>
+                <td>São Paulo</td>
+                <td class="numero">200000</td>
+              </tr>
+              <tr>
+                <td>Bahia</td>
+                <td class="numero">150000</td>
+              </tr>
+              <tr>
+                <td>Minas</td>
+                <td class="numero">130000</td>
+              </tr>  
+              <tr>
+                <td>Rio de Janeiro</td>
+                <td class="numero">120000</td>
+              </tr>
+        </tbody>
+        <tfoot>
+              <th scope="row">Total de habitantes</th>
+              <td class="numero"><strong>00000</strong></td>
+        </tfoot>
+    </table>
+</body>
+</html>
